@@ -5,8 +5,8 @@
 #include <Windows.h>
 
 
-#include "InputClass.h"
-#include "GraphicsClass.h"
+#include "Input/InputClass.h"
+#include "Graphics/GraphicsClass.h"
 
 class SystemClass
 {
