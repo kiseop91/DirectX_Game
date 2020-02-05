@@ -1,13 +1,13 @@
-//
+ï»¿//
 // Vertex Shader
-// ½ÇÁ¦ ¸ğµ¨ÀÇ ·£´õ¸µÀ» ¼öÇà
+// ì‹¤ì œ ëª¨ë¸ì˜ ëœë”ë§ì„ ìˆ˜í–‰
 //
 //
 
 
 /////////////
 // GLOBALS //
-/////////////  Àü¿ªº¯¼ö´Â C++ÄÚµå¿¡¼­ Á¢±ÙÇÏ¿© ¼öÁ¤ÀÌ °¡´ÉÇÏ´Ù.
+/////////////  ì „ì—­ë³€ìˆ˜ëŠ” C++ì½”ë“œì—ì„œ ì ‘ê·¼í•˜ì—¬ ìˆ˜ì •ì´ ê°€ëŠ¥í•˜ë‹¤.
 cbuffer MatrixBuffer
 {
 	matrix worldMatrix;
@@ -40,15 +40,15 @@ PixelInputType ColorVertexShader(VertexInputType input)
     PixelInputType output;
     
 
-	// ¿Ã¹Ù¸£°Ô Çà·Ä ¿¬»êÀ» ÇÏ±â À§ÇÏ¿© position º¤ÅÍ¸¦ w±îÁö ÀÖ´Â 4¼ººĞÀÌ ÀÖ´Â °ÍÀ¸·Î »ç¿ëÇÕ´Ï´Ù.
+	// ì˜¬ë°”ë¥´ê²Œ í–‰ë ¬ ì—°ì‚°ì„ í•˜ê¸° ìœ„í•˜ì—¬ position ë²¡í„°ë¥¼ wê¹Œì§€ ìˆëŠ” 4ì„±ë¶„ì´ ìˆëŠ” ê²ƒìœ¼ë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤.
     input.position.w = 1.0f;
 
-	// Á¤Á¡ÀÇ À§Ä¡¸¦ ¿ùµå, ºä, »ç¿µÀÇ ¼øÀ¸·Î °è»êÇÕ´Ï´Ù.
+	// ì •ì ì˜ ìœ„ì¹˜ë¥¼ ì›”ë“œ, ë·°, ì‚¬ì˜ì˜ ìˆœìœ¼ë¡œ ê³„ì‚°í•©ë‹ˆë‹¤.
     output.position = mul(input.position, worldMatrix);
     output.position = mul(output.position, viewMatrix);
     output.position = mul(output.position, projectionMatrix);
     
-	//ÇÈ¼¿ ¼ÎÀÌ´õ¿¡¼­ »ç¿ëÇÏ±â À§ÇØ ÀÔ·Â »ö»óÀ» ÀúÀåÇÕ´Ï´Ù.
+	//í”½ì…€ ì…°ì´ë”ì—ì„œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì…ë ¥ ìƒ‰ìƒì„ ì €ì¥í•©ë‹ˆë‹¤.
     output.color = input.color;
     
     return output;
